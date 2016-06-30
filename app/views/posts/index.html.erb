@@ -1,0 +1,17 @@
+<header>
+  <div>
+    <h2>Health Vine</h2>
+  </div>
+</header>
+
+<p>
+<%= link_to "Add New Recipe or Exercise", new_post_path %>
+</p>
+
+<div>
+  <% @posts.each do |post| %>
+    <div>
+      <h3><%= link_to post.name, post %></h3>
+    </div>
+  <% end %>
+</div>
