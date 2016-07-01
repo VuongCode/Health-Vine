@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts
+  has_many :comments
+  has_many :snaps
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|

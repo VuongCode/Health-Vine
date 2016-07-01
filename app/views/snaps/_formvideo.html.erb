@@ -1,0 +1,5 @@
+<%= form_for([@post, @post.snaps.build]) do |f| %>
+    <%= f.label :video %>
+    <%= f.file_field :video %>
+    <%= f.submit "Create"%>
+<% end %>

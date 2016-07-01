@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user signs in', %Q{
+feature 'user signs in or out', %Q{
   As a user
   I want to sign in
   So that my questions and answers can be associated to me

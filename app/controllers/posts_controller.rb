@@ -7,6 +7,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comments = Comment.where(post_id: @post)
+    @snaps = Snap.where(post_id: @post)
   end
 
   def new
@@ -50,7 +52,7 @@ class PostsController < ApplicationController
   end
 
   def authorize_user
-    if !user_signed_in? || !current_user.admin?
+    if !current_user
       raise ActionController::RoutingError.new("Not Found")
     end
   end

@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   match 'auth/failure', to: redirect('/'), :via => [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', :via => [:get, :post]
 
-  resources :posts
+  resources :posts do
+    resources :comments
+    resources :snaps
+  end
 
   root 'posts#index'
 end
